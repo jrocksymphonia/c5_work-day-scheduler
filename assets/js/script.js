@@ -4,18 +4,18 @@
 // in the html.
 var now = dayjs();
 var saveBtn = $(".saveBtn");
-var timeBlock = $(".time-block")
-var specificTimeBlock = [
-  $("#hour-9"), 
-  $("#hour-10"),
-  $("#hour-11"),
-  $("#hour-12"),
-  $("#hour-1"),
-  $("#hour-2"),
-  $("#hour-3"),
-  $("#hour-4"),
-  $("#hour-5"),
-];
+// var timeBlock = $(".time-block")
+// var specificTimeBlock = [
+//   $("#9"), 
+//   $("#10"),
+//   $("#11"),
+//   $("#12"),
+//   $("#1"),
+//   $("#2"),
+//   $("#h3"),
+//   $("#hour-4"),
+//   $("#hour-5"),
+// ];
 
 
 
@@ -43,52 +43,49 @@ $(function () {
   // be used to conditionally (if statement) add or remove the past, present, and future classes? 
   // How can *Day.js* be used to get the current hour in 24-hour time?
   
-  var currentHour = now.format("H"); 
-  // for (var i = 0; i < timeBlock.length; i++) {
-  //   timeblock[i].addClass('present');
-  // }
+  var currentHour = now.format("H");
 
-  timeBlock.addClass('past');
-  timeBlock.addClass('present');
-  timeBlock.addClass('future');
-  
 
-  // if (currentHour = 0){
-  //   future;
-  // } else if (currentHour > 17) {
-  //   past;
-  // }
- 
-  for(var i = 0; i < specificTimeBlock.length; i++){
-    var presentTime = currentHour - 9 === i
+  $(".time-block").each(function(){
+    var timeBlock = $(this).attr("id");
+    console.log($(this));
+    console.log(timeBlock < currentHour);
+    console.log(timeBlock);
     
-    if (presentTime){
-      specificTimeBlock[i].removeClass('future');
-      // specificTimeBlock[i-1].removeClass('present');
+
+    if (timeBlock < currentHour) {
+        $(this).addClass('past');
+      } else if (timeBlock === currentHour) {
+        $(this).removeClass('past');
+        $(this).addClass('present');
+      } else {
+        $(this).removeClass('past');
+        $(this).removeClass('present');
+        $(this).addClass('future');
     }
-    if (presentTime < i){
-      specificTimeBlock[i].removeClass('future')
-      specificTimeBlock[i].removeClass('present')
-    }
 
-    console.log(presentTime - i);
-    // console.log(i);
-    // console.log(currentHour); 
+  });
 
 
-  };
+  // timeBlock.addClass('past');
+  // timeBlock.addClass('present');
+  // timeBlock.addClass('future');
+ 
+  // for(var i = 0; i < specificTimeBlock.length; i++){
+    // var presentTime = currentHour - 9 === i
+    // console.log($(this))
+    // var presentTime = $(this).attr("id")
 
-
-   
-  
-  // var pastHours = $(".past");
-  console.log(timeBlock);
-  console.log(specificTimeBlock[0])
-  
-  // (gives me the value of #)
-  // var futureHours = $(".future");
-
-  
+    // console.log(presentTime);
+    // if (presentTime < currentHour){
+    //   specificTimeBlock[i].removeClass('future');
+    //   // specificTimeBlock[i-1].removeClass('present');
+    // }
+    // if (){
+    //   specificTimeBlock[i].removeClass('future')
+    //   specificTimeBlock[i].removeClass('present')
+    // }
+  // };
 
 
 
