@@ -7,9 +7,6 @@ var saveBtn = $(".saveBtn");
 
 
 
-
-
-
 $(function () {
   // TODO: SAVE BUTTON
   // Add a click event on the save button. 
@@ -24,7 +21,10 @@ $(function () {
   });
 
 
+  
 
+
+  //----------------------------------------------------------------------------
   // TODO: COLOR-CODE THE HOURS BASED ON CURRENT HOUR
   // Add code to apply the past, present, or future class to each time block by 
   // comparing the id to the current hour. 
@@ -32,16 +32,15 @@ $(function () {
   // be used to conditionally (if statement) add or remove the past, present, and future classes? 
   // How can *Day.js* be used to get the current hour in 24-hour time?
   
+  //captured day.js in a variable only for its hour value (0-23)
   var currentHour = now.format("H");
 
-
+  //created an .each() iterator function. Works like a forLoop
   $(".time-block").each(function(){
+    //timeBlock is defined by each id value of the divs, which happens to be a number
     var timeBlock = $(this).attr("id");
-    console.log($(this));
-    console.log(timeBlock < currentHour);
-    console.log(timeBlock);
     
-
+    //made a conditional statement comparing the number of the currentHour to the number of the id
     if (timeBlock < currentHour) {
         $(this).addClass('past');
       } else if (timeBlock === currentHour) {
@@ -55,36 +54,17 @@ $(function () {
 
   });
 
-
-  // timeBlock.addClass('past');
-  // timeBlock.addClass('present');
-  // timeBlock.addClass('future');
- 
-  // for(var i = 0; i < specificTimeBlock.length; i++){
-    // var presentTime = currentHour - 9 === i
-    // console.log($(this))
-    // var presentTime = $(this).attr("id")
-
-    // console.log(presentTime);
-    // if (presentTime < currentHour){
-    //   specificTimeBlock[i].removeClass('future');
-    //   // specificTimeBlock[i-1].removeClass('present');
-    // }
-    // if (){
-    //   specificTimeBlock[i].removeClass('future')
-    //   specificTimeBlock[i].removeClass('present')
-    // }
-  // };
-
-
-
+//----------------------------------------------------------------------------
   // TODO: ???
   // Add code to get any user input that was saved in localStorage 
   // and set the values of the corresponding textarea elements. 
   // HINT: How can the id attribute of each time-block be used to do this?
-  //
+  
 
 
+
+
+//----------------------------------------------------------------------------
   // TODO: DISPLAY CURRENT DATE
   // Add code to display the current date in the header of the page.
   $('#currentDay').text(now.format('dddd, MMM D, YYYY'));
