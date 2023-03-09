@@ -4,18 +4,7 @@
 // in the html.
 var now = dayjs();
 var saveBtn = $(".saveBtn");
-// var timeBlock = $(".time-block")
-// var specificTimeBlock = [
-//   $("#9"), 
-//   $("#10"),
-//   $("#11"),
-//   $("#12"),
-//   $("#1"),
-//   $("#2"),
-//   $("#h3"),
-//   $("#hour-4"),
-//   $("#hour-5"),
-// ];
+
 
 
 
