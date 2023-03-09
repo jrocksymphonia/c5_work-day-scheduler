@@ -17,11 +17,11 @@ $(function () {
   // time-block containing the button that was clicked? 
   // How might the id be useful when saving the description in local storage?
   saveBtn.on('click', function() {
-
+    console.log("save timeee")
   });
 
 
-  
+
 
 
   //----------------------------------------------------------------------------
@@ -37,6 +37,7 @@ $(function () {
 
   //created an .each() iterator function. Works like a forLoop
   $(".time-block").each(function(){
+
     //timeBlock is defined by each id value of the divs, which happens to be a number
     var timeBlock = $(this).attr("id");
     
