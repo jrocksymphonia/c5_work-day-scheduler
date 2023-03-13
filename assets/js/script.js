@@ -11,17 +11,41 @@ $( document ).ready(function() {
   var now = dayjs();
   
 
+
+
   $(".saveBtn").on('click', function() {
     // TODO: SAVE BUTTON
-    // Add a click event on the save button. 
+    // Add a click event on the save button.
+    var individualBtn = $(this).attr("id");
+    var timeBlock = $('.time-block');
+    var textarea = $('.description');
+
+
+
+
+    console.log(individualBtn);
+
+    localStorage.setItem(individualBtn, textarea.val());
+    
+    
+    
+    // $(""timeBlock").each(function(){
+    //   var textarea = $(this).attr("id").val();
+      
+
+    //   localStorage.setItem(individualBtn, $(textarea).val());
+
+    //   // localStorage.getItem(
+
+
+
+    // })
     
   
     // time, value
     // This code should use the id () in the containing time-block 
     // as a key to save the user input in local storage. 
-    localStorage.setItem(keyName, keyValue)
-
-
+    
     
     // HINT: What does `this` reference in the click listener function? 
     // How can DOM traversal be used to get the "hour-x" id of the
@@ -37,6 +61,8 @@ $( document ).ready(function() {
 
 
 
+
+
   //----------------------------------------------------------------------------
   // TODO: COLOR-CODE THE HOURS BASED ON CURRENT HOUR
   // Add code to apply the past, present, or future class to each time block by 
@@ -46,7 +72,7 @@ $( document ).ready(function() {
   // How can *Day.js* be used to get the current hour in 24-hour time?
   
   //captured day.js in a variable only for its hour value (0-23)
-  var currentHour = now.format("H");
+  var currentHour = now.format("HH");
 
   //created an .each() iterator function. Works like a forLoop
   $(".time-block").each(function(){
