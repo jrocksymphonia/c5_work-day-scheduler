@@ -3,15 +3,19 @@
 
 $( document ).ready(function() {
   
-  
+  //defined day.js as now, because I'll be using it in two different formats throughout the document
   var now = dayjs();
 
   $(".saveBtn").on('click', function() {
     // TODO: SAVE BUTTON
-    
+
+    // `this` refers to the .saveBtn class captured above, 
+    // this variable represents the key value to saving values to local storage
     var individualBtn = $(this).attr("id");
 
-    //'this' refers to the button that's clicked. Siblings refers to th
+    //'this' refers to the button that's clicked. Siblings refers to the element
+    // paired with the particular button that's being clicked, in this case the .description class
+    // and we're capturing its value into local storage!
     localStorage.setItem(individualBtn, $(this).siblings(".description").val());
 
   });
@@ -19,6 +23,8 @@ $( document ).ready(function() {
   //----------------------------------------------------------------------------
   // TODO: REPOPULATE THE DOM WITH WHAT"S SAVED ON LOCAL STORAGE
 
+  // made individual calls to pull the specific saved key values (using .getItem) 
+  // to their corresponding textbox id!
   $('#09 .description').val(localStorage.getItem("9am-task"));
   $('#10 .description').val(localStorage.getItem("10am-task"));
   $('#11 .description').val(localStorage.getItem("11am-task"));
