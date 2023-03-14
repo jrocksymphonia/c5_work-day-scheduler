@@ -10,52 +10,37 @@ $( document ).ready(function() {
 
   var now = dayjs();
   
+ 
 
 
 
   $(".saveBtn").on('click', function() {
     // TODO: SAVE BUTTON
     // Add a click event on the save button.
-    var individualBtn = $(this).attr("id");
-    var timeBlock = $('.time-block');
-    var textarea = $('.description');
-
-
-
-
-    console.log(individualBtn);
-
-    localStorage.setItem(individualBtn, textarea.val());
-    
-    
-    
-    // $(""timeBlock").each(function(){
-    //   var textarea = $(this).attr("id").val();
-      
-
-    //   localStorage.setItem(individualBtn, $(textarea).val());
-
-    //   // localStorage.getItem(
-
-
-
-    // })
-    
-  
-    // time, value
     // This code should use the id () in the containing time-block 
     // as a key to save the user input in local storage. 
-    
-    
-    // HINT: What does `this` reference in the click listener function? 
+     // HINT: What does `this` reference in the click listener function? 
     // How can DOM traversal be used to get the "hour-x" id of the
     // time-block containing the button that was clicked? 
     // How might the id be useful when saving the description in local storage?
-    console.log("save timeee");
-    // Timeout setTimeout(function, time in milliseconds)
-   
+    
+    var individualBtn = $(this).attr("id");
+
+
+    //'this' refers to the button that's clicked. Siblings refers to th
+    localStorage.setItem(individualBtn, $(this).siblings(".description").val());
 
   });
+
+  $('#09 .description').val(localStorage.getItem("9am-task"));
+  $('#10 .description').val(localStorage.getItem("10am-task"));
+  $('#11 .description').val(localStorage.getItem("11am-task"));
+  $('#12 .description').val(localStorage.getItem("12pm-task"));
+  $('#13 .description').val(localStorage.getItem("1pm-task"));
+  $('#14 .description').val(localStorage.getItem("2pm-task"));
+  $('#15 .description').val(localStorage.getItem("3pm-task"));
+  $('#16 .description').val(localStorage.getItem("4pm-task"));
+  $('#17 .description').val(localStorage.getItem("5pm-task"));
 
 
 
