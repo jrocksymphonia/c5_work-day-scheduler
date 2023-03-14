@@ -24,7 +24,7 @@ N/A
 
 **remember to refresh the page to see the updated hour!
 
-Link to the live page here: 
+Link to the live page here: https://jrocksymphonia.github.io/c5_work-day-scheduler/
 
 
 ## Credits
