@@ -42,6 +42,8 @@ $( document ).ready(function() {
   //captured day.js in a variable only for its hour value (0-23)
   var currentHour = now.format("HH");
 
+  console.log(currentHour);
+
   //created an .each() iterator function. Works like a forLoop
   $(".time-block").each(function(){
 
