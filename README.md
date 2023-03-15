@@ -10,17 +10,19 @@ N/A
 
 ## Usage
 
-![main page. Shows today's date](./assets/images/1-sh.png)
+![Main page. Shows today's date](./assets/images/1-sh.png)
 
-![console logging the time using current time using military time](./assets/images/3-sh.png)
+![Shows the time color-blocks at work. Console shows the current hour](./assets/images/2-sh.png)
+
+![Console logging the time using current time using military time](./assets/images/3-sh.png)
 
 ![When entering a value,](./assets/images/4-sh.png)
 
-![it saves to local storage](./assets/images/5-sh.png)
+![It saves to local storage](./assets/images/5-sh.png)
 
-![all are entered with their corresponding key name](./assets/images/6-sh.png)
+![All are entered with their corresponding key name](./assets/images/6-sh.png)
 
-![when refreshed, the inputs repopulate the DOM with their corresponding saved values in the local storage](./assets/images/7-sh.png)
+![When refreshed, the inputs repopulate the DOM with their corresponding saved values in the local storage](./assets/images/7-sh.png)
 
 **remember to refresh the page to see the updated hour!
 
